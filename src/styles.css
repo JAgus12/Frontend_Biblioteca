@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: hsl(0, 0%, 95%);
+    font-size: 15px;
+}
+
+main{
+    background-image: url('assets/books-2596809_1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 500px;
+}
