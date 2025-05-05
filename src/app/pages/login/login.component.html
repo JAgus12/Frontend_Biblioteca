@@ -1,0 +1,14 @@
+<main class="fondo-login">
+        <form (ngSubmit)="iniciosesion()">
+            <p>
+                <label for="usuario">Usuario</label>
+            </p>
+                <input type="text" name="usuario" [(ngModel)]="user" required="">
+            <p>
+                <label for="password">Contraseña</label>
+            </p>
+                <input [type]="ver ? 'text' : 'password'" name="password" [(ngModel)]="password" required=""><i class="fa-solid fa-eye" (click)="mostrar()"></i>
+            <button type="submit">Iniciar Sesión</button>
+        </form> 
+</main>
+  

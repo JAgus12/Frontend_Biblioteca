@@ -32,10 +32,6 @@ header {
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  nav a:hover {
-    background-color:slateblue;
-    color: #fff;
+    background-color:tomato;
   }
   
