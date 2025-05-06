@@ -24,7 +24,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+               
+              },
+               "src/favicon.ico",
+               "src/assets/"
             ],
             "styles": [
               "src/styles.css"
@@ -64,6 +67,7 @@
             "development": {
               "buildTarget": "biblioteca:build:development"
             }
+
           },
           "defaultConfiguration": "development"
         },
@@ -92,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

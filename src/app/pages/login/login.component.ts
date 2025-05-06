@@ -24,6 +24,8 @@ export class LoginComponent {
     console.log(this.password)
     if(this.password!='' && this.user!=''){
       this.route.navigate(['/dashboard'])
+    }else{
+      alert('Faltan datos')
     }
    
   }

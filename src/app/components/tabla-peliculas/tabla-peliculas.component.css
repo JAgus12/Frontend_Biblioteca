@@ -1,0 +1,32 @@
+/* Estilos generales para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Estilo de las celdas */
+  th, td {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Fondo y texto de las cabeceras */
+  th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Alternancia de filas */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #fff;
+  }

@@ -1,0 +1,47 @@
+<header>
+    <section class="izquierda">
+        <ul>
+            <li><i class="fa-solid fa-bars"></i></li>
+            <li class="logo"></li>
+            <li>Biblioteca</li>
+        </ul>
+    </section>
+    <section class="derecha">
+        <ul>
+            <li>Agustin Gonzalez</li>
+            <li><i class="fa-solid fa-user"></i></li>
+            <li><a routerLink="/login">Log out</a></li>
+        </ul>
+    </section>
+</header>
+<section class="sidebar">
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="/dashboard" (click)="seleccion(0)"  [className]="seleccionado==0 ? 'selected' : ''">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a (click)="seleccion(1)"  [className]="seleccionado==1 ? 'selected' : ''">
+                <i class="fa-solid fa-book-open"></i>
+                  Alquileres
+                </a>
+            </li>
+            <li>
+                <a routerLink="/productos" (click)="seleccion(2)" [className]="seleccionado==2 ? 'selected' : ''">
+                    <i class="fa-solid fa-book"></i>
+                    Productos
+                </a>
+            </li>
+            <li>
+                <a (click)="seleccion(3)"  [className]="seleccionado==3 ? 'selected' : ''">
+                    <i class="fa-regular fa-circle-user"></i>
+                    Cuenta
+                </a>
+            </li>
+        </ul>
+    </nav>
+</section>
+

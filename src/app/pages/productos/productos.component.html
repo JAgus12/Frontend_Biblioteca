@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<main class="productos">
+    <section>
+
+    </section>
+    <select name="tipo" [(ngModel)]="filtroseleccionado">
+        <option value="libro">libro</option>
+        <option value="pelicula">pelicula</option>
+        <option value="revista">revista</option>
+    </select>
+    <form>
+        <label for="nombre">Titulo</label>
+        <input type="text" name="nombre">
+        <button type="submit" (click)="buscar()">Buscar</button>
+    </form>
+
+    @if (filtroseleccionado == 'libro') {
+        <app-tabla-libros #libros></app-tabla-libros>
+    }
+
+    @if (filtroseleccionado== 'pelicula') {
+        <app-tabla-peliculas #peliculas></app-tabla-peliculas>
+    }
+    
+</main>

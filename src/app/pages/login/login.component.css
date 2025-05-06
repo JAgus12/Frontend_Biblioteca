@@ -24,9 +24,5 @@ label{
 button:hover{
     cursor: pointer;
 }
-i{
-    position: absolute;
-    top: 369px;
-    right: 700px;
-}
+
 
