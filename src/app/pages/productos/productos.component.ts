@@ -14,8 +14,8 @@ import { TablaRevistasComponent } from '../../components/tabla-revistas/tabla-re
 export class ProductosComponent {
   filtroseleccionado:string = "libro"
 
-  buscar(){
-    this.filtroseleccionado=this.filtroseleccionado
+  buscar(filtro:string){
+    this.filtroseleccionado=filtro
     console.log(this.filtroseleccionado)
   }
 }

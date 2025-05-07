@@ -1,25 +1,26 @@
 <app-menu></app-menu>
 <main class="productos">
     <section>
-
+        <button (click)="buscar('libro')">Libros</button>
+        <button (click)="buscar('pelicula')">Peliculas</button>
+        <button (click)="buscar('revista')">Revistas</button>
     </section>
-    <select name="tipo" [(ngModel)]="filtroseleccionado">
-        <option value="libro">libro</option>
-        <option value="pelicula">pelicula</option>
-        <option value="revista">revista</option>
-    </select>
     <form>
         <label for="nombre">Titulo</label>
         <input type="text" name="nombre">
-        <button type="submit" (click)="buscar()">Buscar</button>
+        <button type="submit">Buscar</button>
     </form>
 
-    @if (filtroseleccionado == 'libro') {
-        <app-tabla-libros #libros></app-tabla-libros>
-    }
-
-    @if (filtroseleccionado== 'pelicula') {
-        <app-tabla-peliculas #peliculas></app-tabla-peliculas>
+    @switch (filtroseleccionado) {
+        @case ('libro') {
+            <app-tabla-libros #libros></app-tabla-libros>
+        }
+        @case ('pelicula') {
+            <app-tabla-peliculas #peliculas></app-tabla-peliculas>
+        }
+        @default {
+            <app-tabla-libros #libros></app-tabla-libros>
+        }
     }
     
 </main>
