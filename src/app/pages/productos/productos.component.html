@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <main class="productos">
-    <section>
+    <section class="filtros">
         <button (click)="buscar('libro')">Libros</button>
         <button (click)="buscar('pelicula')">Peliculas</button>
         <button (click)="buscar('revista')">Revistas</button>
@@ -17,6 +17,9 @@
         }
         @case ('pelicula') {
             <app-tabla-peliculas #peliculas></app-tabla-peliculas>
+        }
+        @case ('revista') {
+            <app-tabla-revistas #revistas></app-tabla-revistas>
         }
         @default {
             <app-tabla-libros #libros></app-tabla-libros>

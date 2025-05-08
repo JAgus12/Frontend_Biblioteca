@@ -30,3 +30,11 @@ table {
   tr:nth-child(odd) {
     background-color: #fff;
   }
+
+  button{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+  }

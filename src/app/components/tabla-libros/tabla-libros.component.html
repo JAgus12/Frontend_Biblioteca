@@ -2,21 +2,21 @@
     <tr>
         <td>Titulo</td>
         <td>Descripción</td>
-        <td>Tipo</td>
         <td>Director</td>
         <td>Duracion</td>
         <td>Productor</td>
-        <td>Año</td>
+        <td>Unidades</td>
+        <td>Alquilar</td>
     </tr>
     @for (libro of libroService.libros; track $index) {
         <tr>
             <td>{{libro.titulo}}</td>
             <td>{{libro.descripcion}}</td>
-            <td>{{libro.tipo}}</td>
             <td>{{libro.isbn}}</td>
             <td>{{libro.autor}}</td>
             <td>{{libro.editorial}}</td>
             <td>{{libro.unidades}}</td>
+            <td><button>Alquilar</button></td>
         </tr>
     }
 </table>

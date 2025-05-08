@@ -1,1 +1,20 @@
-<p>tabla-revistas works!</p>
+<table>
+    <tr>
+        <td>Titulo</td>
+        <td>Descripción</td>
+        <td>Editorial</td>
+        <td>Unidades</td>
+        <td>Alquilar</td>
+    </tr>
+    @for (revista of revistaService.revistas; track $index) {
+        <tr>
+            <td>{{revista.titulo}}</td>
+            <td>{{revista.descripcion}}</td>
+            <td>{{revista.editorial}}</td>
+            <td>{{revista.unidades}}</td>
+            <td><button>Alquilar</button></td>
+        </tr>
+    }
+   
+</table>
+

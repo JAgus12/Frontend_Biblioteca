@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RevistaService } from './revista.service';
 
 @Component({
   selector: 'app-tabla-revistas',
@@ -8,4 +9,19 @@ import { Component } from '@angular/core';
 })
 export class TablaRevistasComponent {
 
+  constructor(public revistaService:RevistaService){
+    this.getRevistas()
+  }
+
+  getRevistas(){
+    this.revistaService.getRevistas().subscribe({
+      next:(data)=>{
+        this.revistaService.revistas = data
+        console.log(data)
+      },
+      error:()=>{
+        console.log('error recuperando revistas')
+      }
+    })
+  }
 }

@@ -37,6 +37,10 @@ button{
     border: none;
 }
 
+.filtros button{
+    margin: 10px;
+}
+
 
   
 

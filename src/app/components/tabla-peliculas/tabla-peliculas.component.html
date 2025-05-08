@@ -2,12 +2,25 @@
     <tr>
         <td>Titulo</td>
         <td>Descripción</td>
-        <td>Tipo</td>
-        <td>ISBN</td>
-        <td>Autor</td>
-        <td>Editorial</td>
+        <td>director</td>
+        <td>duración</td>
+        <td>productor</td>
+        <td>Año</td>
         <td>Unidades</td>
+        <td>Alquilar</td>
     </tr>
+    @for (pelicula of peliculaService.peliculas; track $index) {
+        <tr>
+            <td>{{pelicula.titulo}}</td>
+            <td>{{pelicula.descripcion}}</td>
+            <td>{{pelicula.director}}</td>
+            <td>{{pelicula.duracion}}</td>
+            <td>{{pelicula.productor}}</td>
+            <td>{{pelicula.anho}}</td>
+            <td>{{pelicula.unidades}}</td>
+            <td><button>Alquilar</button></td>
+        </tr>
+    }
  
 </table>
 

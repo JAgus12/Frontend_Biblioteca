@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class RevistaService {
 
-  constructor() { }
+  readonly url='http://localhost:8080/api/revistas'
+  revistas:any[]=[]
+  constructor(private http:HttpClient) { 
+    this.revistas=[]
+  }
+
+  getRevistas(){
+    return this.http.get<any[]>(this.url)
+  }
 }
