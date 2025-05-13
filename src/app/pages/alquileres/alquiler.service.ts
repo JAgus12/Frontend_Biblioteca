@@ -20,4 +20,8 @@ export class AlquilerService {
     const urlbuscar=`${this.urlbuscar}/${producto_id}`
     return this.http.get<number>(urlbuscar)
    }
+
+   alquilarProducto(producto:any){
+    return this.http.post<any>(this.url,producto)
+   }
 }

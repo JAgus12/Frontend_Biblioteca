@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 export class PeliculaService {
   readonly url='http://localhost:8080/api/peliculas'
   peliculas:any[]=[]
+  pelicula:any
   constructor(private http:HttpClient) {
     this.peliculas=[]
    }
@@ -15,4 +16,10 @@ export class PeliculaService {
    getPeliculas(){
     return this.http.get<any[]>(this.url)
    }
+
+   getPelicula(id:number){
+    return this.http.get<any>(`${this.url}/${id}`)
+   }
+
+
 }

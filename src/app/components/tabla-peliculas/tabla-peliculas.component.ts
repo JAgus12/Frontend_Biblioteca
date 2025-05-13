@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PeliculaService } from './pelicula.service';
+import { AlquilerService } from '../../pages/alquileres/alquiler.service';
 
 @Component({
   selector: 'app-tabla-peliculas',
@@ -9,7 +10,7 @@ import { PeliculaService } from './pelicula.service';
 })
 export class TablaPeliculasComponent {
 
-  constructor(public peliculaService:PeliculaService){
+  constructor(public peliculaService:PeliculaService,public alquilerService:AlquilerService){
     this.getPeliculas()
   }
 
@@ -21,6 +22,19 @@ export class TablaPeliculasComponent {
       },
       error:()=>{
         console.log('error recuperando peliculas')
+      }
+    })
+  }
+
+  alquilarPelicula(id:any){
+    console.log(id)
+    this.peliculaService.getPelicula(id).subscribe({
+      next:(data)=>{
+        
+        console.log(data)
+      },
+      error:()=>{
+        console.log('error buscando pelicula')
       }
     })
   }
