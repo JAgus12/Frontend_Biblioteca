@@ -25,17 +25,6 @@ button:hover{
     cursor: pointer;
 }
 
-.fa-eye {
-  position: relative;
-  left: 95px;
-  top: -18px;
-  cursor: pointer;
-  color: #888;
-  transition: color 0.3s ease;
+input[type="date"]{
+    font-size: 15px;
 }
-
-.fa-eye:hover {
-  color: #667eea;
-}
-
-

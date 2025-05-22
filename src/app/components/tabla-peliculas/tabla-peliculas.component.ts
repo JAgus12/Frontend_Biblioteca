@@ -30,7 +30,6 @@ export class TablaPeliculasComponent {
     console.log(id)
     this.peliculaService.getPelicula(id).subscribe({
       next:(data)=>{
-        
         console.log(data)
       },
       error:()=>{
