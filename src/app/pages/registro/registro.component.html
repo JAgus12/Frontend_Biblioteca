@@ -22,7 +22,7 @@
             <label for="email">Email</label>
         </p>
         <p>
-            <input type="text" name="email" [(ngModel)]="userRegistro.email">
+            <input type="text" name="email" email required [(ngModel)]="userRegistro.email">
         </p>
         <p>
             <label for="telefono">Telefono</label>
@@ -49,11 +49,11 @@
             <input type="text" name="password" [(ngModel)]="userRegistro.password">
         </p>
         <p>
-            <label for="password">Confirmar Contraseña</label>
+            <label for="password" >Confirmar Contraseña</label>
         </p>
         <p>
-            <input type="text" name="password">
+            <input type="text" [(ngModel)]="comprobacion" name="password">
         </p>
-        <button type="submit">Registrarse</button>
+        <button type="submit" (click)="registrarse()">Registrarse</button>
     </form>
 </main>
