@@ -1,58 +1,58 @@
 <main class="fondo-login">
-    <form (ngSubmit)="registrarse()">
+    <form [formGroup]="registro" (ngSubmit)="registrarse()">
         <p>
             <label for="nombre">Nombre</label>
         </p>
         <p>
-            <input type="text" name="nombre" [(ngModel)]="userRegistro.nombre">
+            <input type="text" name="nombre" formControlName="nombre">
         </p>
         <p>
             <label for="primerapellido">Primer Apellido</label>
         </p>
         <p>
-            <input type="text" name="primerapellido"  [(ngModel)]="userRegistro.apellido1">
+            <input type="text" name="primerapellido"  formControlName="apellido1">
         </p>
         <p>
             <label for="segundoapellido">Segundo Apellido</label>
         </p>
         <p>
-            <input type="text" name="segundoapellido" [(ngModel)]="userRegistro.apellido2">
+            <input type="text" name="segundoapellido" formControlName="apellido2">
         </p>
         <p>
             <label for="email">Email</label>
         </p>
         <p>
-            <input type="text" name="email" email required [(ngModel)]="userRegistro.email">
+            <input type="text" name="email" formControlName="email">
         </p>
         <p>
             <label for="telefono">Telefono</label>
         </p>
         <p>
-            <input type="text" name="telefono" [(ngModel)]="userRegistro.telefono">
+            <input type="text" name="telefono" formControlName="telefono">
         </p>
         <p>
             <label for="fecha">Fecha Nacimiento</label>
         </p>
         <p>
-            <input type="date" name="fecha" [(ngModel)]="userRegistro.fechaNacimiento">
+            <input type="date" name="fecha" formControlName="fechaNacimiento">
         </p>
         <p>
             <label for="usuario">Usuario</label>
         </p>
         <p>
-            <input type="text" name="usuario" [(ngModel)]="userRegistro.usuario">
+            <input type="text" name="usuario" formControlName="usuario">
         </p>
         <p>
             <label for="password">Contraseña</label>
         </p>
         <p>
-            <input type="text" name="password" [(ngModel)]="userRegistro.password">
+            <input type="password" name="password" formControlName="password">
         </p>
         <p>
             <label for="password" >Confirmar Contraseña</label>
         </p>
         <p>
-            <input type="text" [(ngModel)]="comprobacion" name="password">
+            <input type="password" formControlName="comprobacionPassword" name="password">
         </p>
         <button type="submit" (click)="registrarse()">Registrarse</button>
     </form>
