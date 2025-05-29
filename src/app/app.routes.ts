@@ -5,6 +5,7 @@ import { LogueadoComponent } from './pages/logueado/logueado.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { AlquileresComponent } from './pages/alquileres/alquileres.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -20,17 +21,20 @@ export const routes: Routes = [
     {
         path:'dashboard',
         component:LogueadoComponent,
-        title:'Dashboard'
+        title:'Dashboard',
+        canActivate:[authGuard]
     },
     {
         path:'productos',
         component:ProductosComponent,
-        title:'Productos'
+        title:'Productos',
+        canActivate:[authGuard]
     },
     {
         path:'alquileres',
         component:AlquileresComponent,
-        title:'Alquileres'
+        title:'Alquileres',
+        canActivate:[authGuard]
     },
     {
         path:'registro',

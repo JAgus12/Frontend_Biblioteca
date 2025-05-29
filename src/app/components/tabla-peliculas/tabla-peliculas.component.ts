@@ -31,6 +31,12 @@ export class TablaPeliculasComponent {
     this.peliculaService.getPelicula(id).subscribe({
       next:(data)=>{
         console.log(data)
+        // const newAlquiler={
+        //   fechaAlta:new Date(),
+        //   fechaFin:
+        //   producto_id:id
+        //   usuario:
+        // }
       },
       error:()=>{
         console.log('error buscando pelicula')
