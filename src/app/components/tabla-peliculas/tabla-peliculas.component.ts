@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PeliculaService } from './pelicula.service';
 import { AlquilerService } from '../../pages/alquileres/alquiler.service';
+import { Alquiler } from '../../models/alquiler';
 
 @Component({
   selector: 'app-tabla-peliculas',
@@ -10,6 +11,7 @@ import { AlquilerService } from '../../pages/alquileres/alquiler.service';
 })
 export class TablaPeliculasComponent {
 
+  peliculasDisponibles:any[]=[]
   constructor(public peliculaService:PeliculaService,public alquilerService:AlquilerService){
     this.getPeliculas()
   }
@@ -17,8 +19,21 @@ export class TablaPeliculasComponent {
   getPeliculas(){
     this.peliculaService.getPeliculas().subscribe({
       next:(data)=>{
-        this.peliculaService.peliculas=data
-        console.log(data)
+        data.forEach(pelicula=>{
+          this.alquilerService.buscarAlquiler(pelicula.producto_id).subscribe({
+            next:(cantidad)=>{
+              if(cantidad==pelicula.unidades){
+                console.log('Estan todos alquilados')
+              }else{
+                this.peliculasDisponibles.push(pelicula)
+              }
+            },
+            error:()=>{
+              console.log('error')
+            }
+          })
+        })
+        this.peliculaService.peliculas=this.peliculasDisponibles;
       },
       error:()=>{
         console.log('error recuperando peliculas')
@@ -27,16 +42,23 @@ export class TablaPeliculasComponent {
   }
 
   alquilarPelicula(id:any){
-    console.log(id)
+    //console.log(id)
     this.peliculaService.getPelicula(id).subscribe({
       next:(data)=>{
-        console.log(data)
-        // const newAlquiler={
-        //   fechaAlta:new Date(),
-        //   fechaFin:
-        //   producto_id:id
-        //   usuario:
-        // }
+        //console.log(data)
+        const newAlquiler:Alquiler={
+          productoId:id,
+          usuario:localStorage.getItem('user')!
+        }
+        //console.log(newAlquiler)
+        this.alquilerService.alquilarProducto(newAlquiler).subscribe({
+          next:(data)=>{
+            console.log("hecho")
+          },
+          error:error=>{
+            console.log('error guardando nuevo alquiler')
+          }
+        })
       },
       error:()=>{
         console.log('error buscando pelicula')

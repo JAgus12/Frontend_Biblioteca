@@ -33,6 +33,7 @@ export class LoginComponent {
         if(response.token){
           this.route.navigate(['/dashboard'])
           localStorage.setItem('token',response.token)
+          localStorage.setItem('user',this.usuario.usuario)
         }else{
           alert('Datos Incorrectos')
         }

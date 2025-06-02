@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LibroService } from './libro.service';
 import { AlquilerService } from '../../pages/alquileres/alquiler.service';
+import { Alquiler } from '../../models/alquiler';
 
 @Component({
   selector: 'app-tabla-libros',
@@ -48,6 +49,23 @@ export class TablaLibrosComponent {
         //console.log(data)
       },
       error:() =>{
+        console.log('error')
+      }
+    })
+  }
+
+
+  alquilarLibro(id:any){
+    const newAlquiler:Alquiler={
+      productoId:id,
+      usuario:localStorage.getItem('user')!
+    }
+
+    this.alquilerService.alquilarProducto(newAlquiler).subscribe({
+      next:(data)=>{
+        console.log('hecho')
+      },
+      error:()=>{
         console.log('error')
       }
     })

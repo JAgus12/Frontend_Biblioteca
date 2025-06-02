@@ -24,4 +24,8 @@ export class AlquilerService {
    alquilarProducto(producto:any){
     return this.http.post<any>(this.url,producto)
    }
+
+   devolverProducto(id:any){
+
+   }
 }
