@@ -1,0 +1,14 @@
+canvas{
+    margin-left: 250px;
+    position: relative;
+}
+
+.productos{
+    top: 30px;
+    left: 120px;
+}
+
+.linea{
+    top: -190px;
+    left: 450px;
+}
