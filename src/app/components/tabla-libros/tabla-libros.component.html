@@ -16,7 +16,7 @@
             <td>{{libro.autor}}</td>
             <td>{{libro.editorial}}</td>
             <td>{{libro.unidades}}</td>
-            <td><button>Alquilar</button></td>
+            <td><button (click)="alquilarLibro(libro.producto_id)">Alquilar</button></td>
         </tr>
     }
 </table>

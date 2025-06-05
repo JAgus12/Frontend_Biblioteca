@@ -12,7 +12,7 @@
             <td>{{revista.descripcion}}</td>
             <td>{{revista.editorial}}</td>
             <td>{{revista.unidades}}</td>
-            <td><button>Alquilar</button></td>
+            <td><button (click)="alquilarRevista(revista.producto_id)">Alquilar</button></td>
         </tr>
     }
    

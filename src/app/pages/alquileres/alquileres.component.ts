@@ -11,18 +11,45 @@ import { DatePipe } from '@angular/common';
 })
 export class AlquileresComponent {
 
+  user=localStorage.getItem('user');
   constructor(public alquilerService:AlquilerService){
-    this.getAlquileres()
+    //this.getAlquileres()
+    this.getAlquileresUsuario()
   }
 
   getAlquileres(){
     this.alquilerService.getAlquileres().subscribe({
       next:(data) => {
         this.alquilerService.alquileres=data
-        console.log(data)
+        //console.log(data)
       },
       error:() => {
         console.log('error recuperando alquileres')
+      }
+    })
+  }
+
+  getAlquileresUsuario(){
+    this.alquilerService.buscarAlquilerUsuario(this.user).subscribe({
+      next:(data)=>{
+        this.alquilerService.alquilerUsuario=data
+        //console.log(data)
+        console.log(this.alquilerService.alquilerUsuario)
+      },
+      error:()=>{
+        console.log('error buscando alquileres usuario')
+      }
+    })
+  }
+
+  devolverProducto(id:any){
+    this.alquilerService.devolverProducto(id).subscribe({
+      next:(data)=>{
+        console.log('devuelto')
+        this.getAlquileresUsuario()
+      },
+      error:()=>{
+        console.log('error eliminando producto')
       }
     })
   }

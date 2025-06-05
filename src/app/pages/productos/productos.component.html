@@ -5,9 +5,9 @@
         <button (click)="buscar('pelicula')">Peliculas</button>
         <button (click)="buscar('revista')">Revistas</button>
     </section>
-    <form>
+    <form (ngSubmit)="buscarProducto()">
         <label for="nombre">Titulo</label>
-        <input type="text" name="nombre">
+        <input type="text" name="nombre" [(ngModel)]="titulo">
         <button type="submit">Buscar</button>
     </form>
 

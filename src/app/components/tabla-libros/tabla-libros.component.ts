@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LibroService } from './libro.service';
 import { AlquilerService } from '../../pages/alquileres/alquiler.service';
 import { Alquiler } from '../../models/alquiler';
+import { ToastrService,ToastrModule } from 'ngx-toastr';
 
 @Component({
   selector: 'app-tabla-libros',
@@ -13,11 +14,15 @@ export class TablaLibrosComponent {
  
   cantidad:any;
   librosDisponibles:any[]=[];
-  constructor(public libroService:LibroService,public alquilerService:AlquilerService){
-
+  constructor(public libroService:LibroService,public alquilerService:AlquilerService,private toastr:ToastrService){
   }
   ngOnInit():void{
     this.getLibros()
+  }
+
+  mostrarToast(){
+    console.log('se va mostar')
+    this.toastr.success('Alquiler realizado correctamente')
   }
 
   getLibros(){
@@ -63,9 +68,12 @@ export class TablaLibrosComponent {
 
     this.alquilerService.alquilarProducto(newAlquiler).subscribe({
       next:(data)=>{
-        console.log('hecho')
+        //console.log('hecho')
+      this.mostrarToast()
+        
       },
       error:()=>{
+        this.toastr.success('Solo puedes alquilar uno')
         console.log('error')
       }
     })

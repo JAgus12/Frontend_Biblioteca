@@ -36,3 +36,15 @@ body {
     justify-content: center;
     align-items: center;
   }
+
+
+#toast-container {
+  position: fixed !important;
+  z-index: 999999 !important;
+  top: 100px;
+  right: 20px;
+  pointer-events: auto !important;
+  padding: 20px;
+  background-color: aliceblue;
+  color: orangered;
+  }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from '../../components/menu/menu.component';
+import { LogueadoService } from './logueado.service';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-logueado',
@@ -8,5 +10,7 @@ import { MenuComponent } from '../../components/menu/menu.component';
   styleUrl: './logueado.component.css'
 })
 export class LogueadoComponent {
+
+
 
 }
