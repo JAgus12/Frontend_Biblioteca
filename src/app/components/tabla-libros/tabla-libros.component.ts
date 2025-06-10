@@ -68,8 +68,10 @@ export class TablaLibrosComponent {
 
     this.alquilerService.alquilarProducto(newAlquiler).subscribe({
       next:(data)=>{
+        this.alquilerService.alquileresLibros++
+        console.log(this.alquilerService.alquileresLibros)
         //console.log('hecho')
-      this.mostrarToast()
+        this.mostrarToast()
         
       },
       error:()=>{

@@ -1,0 +1,58 @@
+.cuenta {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 420px; /* te recomiendo usar centrar con flex en el padre para evitar margen fijo */
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  width: 600px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.cuenta h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #222;
+}
+
+.cuenta i {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 60px;
+  color: #4a90e2;
+}
+
+section {
+  margin-top: 20px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 30px;
+  width: 100%;
+}
+
+section p:nth-child(odd) {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #555;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  align-self: center;
+  justify-self: start;
+}
+
+section p:nth-child(even) {
+  font-weight: 400;
+  color: #222;
+  font-size: 1rem;
+  justify-self: start;
+}
+
+

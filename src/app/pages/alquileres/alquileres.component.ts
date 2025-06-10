@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MenuComponent } from '../../components/menu/menu.component';
 import { AlquilerService } from './alquiler.service';
 import { DatePipe } from '@angular/common';
+import { LogueadoComponent } from '../logueado/logueado.component';
+import { ToastrService,ToastrModule } from 'ngx-toastr';
 
 @Component({
   selector: 'app-alquileres',
@@ -12,7 +14,7 @@ import { DatePipe } from '@angular/common';
 export class AlquileresComponent {
 
   user=localStorage.getItem('user');
-  constructor(public alquilerService:AlquilerService){
+  constructor(public alquilerService:AlquilerService,private toastr:ToastrService){
     //this.getAlquileres()
     this.getAlquileresUsuario()
   }
@@ -33,8 +35,10 @@ export class AlquileresComponent {
     this.alquilerService.buscarAlquilerUsuario(this.user).subscribe({
       next:(data)=>{
         this.alquilerService.alquilerUsuario=data
+        
         //console.log(data)
-        console.log(this.alquilerService.alquilerUsuario)
+        
+        //console.log(this.alquilerService.alquilerUsuario)
       },
       error:()=>{
         console.log('error buscando alquileres usuario')
@@ -45,13 +49,15 @@ export class AlquileresComponent {
   devolverProducto(id:any){
     this.alquilerService.devolverProducto(id).subscribe({
       next:(data)=>{
-        console.log('devuelto')
+        //console.log('devuelto')
         this.getAlquileresUsuario()
+        this.toastr.success('Producto Devuelto')
       },
       error:()=>{
         console.log('error eliminando producto')
       }
     })
   }
+
 
 }

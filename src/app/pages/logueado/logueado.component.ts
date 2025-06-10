@@ -42,6 +42,9 @@ export class LogueadoComponent {
   })
 
   this.chart.resize(500,500)
+
+ 
+
   
   const data2 = {
   labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
@@ -62,6 +65,8 @@ this.char2=new Chart(this.chartAlquileres.nativeElement,{
 this.char2.resize(700,500)
   
   }
+
+ 
  
 
 }

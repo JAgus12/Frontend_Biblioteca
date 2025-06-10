@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PeliculaService } from './pelicula.service';
 import { AlquilerService } from '../../pages/alquileres/alquiler.service';
 import { Alquiler } from '../../models/alquiler';
+import { ToastrService,ToastrModule } from 'ngx-toastr';
 
 @Component({
   selector: 'app-tabla-peliculas',
@@ -12,7 +13,7 @@ import { Alquiler } from '../../models/alquiler';
 export class TablaPeliculasComponent {
 
   peliculasDisponibles:any[]=[]
-  constructor(public peliculaService:PeliculaService,public alquilerService:AlquilerService){
+  constructor(public peliculaService:PeliculaService,public alquilerService:AlquilerService,private toastr:ToastrService){
     this.getPeliculas()
   }
 
@@ -53,7 +54,9 @@ export class TablaPeliculasComponent {
         //console.log(newAlquiler)
         this.alquilerService.alquilarProducto(newAlquiler).subscribe({
           next:(data)=>{
-            console.log("hecho")
+            //console.log("hecho")
+            this.toastr.success('Alquiler Realizado correctamente')
+            this.alquilerService.alquileresPeliculas++
           },
           error:error=>{
             console.log('error guardando nuevo alquiler')

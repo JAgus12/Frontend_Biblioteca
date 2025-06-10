@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Alquiler } from '../../models/alquiler';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,9 @@ export class AlquilerService {
   readonly urlbuscar='http://localhost:8080/api/alquileres/productosAlquilados'
   alquileres:any[]=[]
   alquilerUsuario:any=[]
+  alquileresLibros:any
+  alquileresRevistas:any
+  alquileresPeliculas:any
   constructor(private http:HttpClient) {
     this.alquileres=[]
    }
@@ -35,4 +39,6 @@ export class AlquilerService {
       const url=`${this.url}/${id}`
       return this.http.delete<any>(url)
    }
+
+
 }

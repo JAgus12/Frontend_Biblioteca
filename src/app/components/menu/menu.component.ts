@@ -36,7 +36,7 @@ export class MenuComponent {
     this.menuService.buscarUsuario(user).subscribe({
       next:(data)=>{
         // @ViewChild('primerLi') primerLi!: ElementRef<HTMLLIElement>;
-        console.log(data)
+        //console.log(data)
         this.nombre.nativeElement.textContent=`${data.nombre} ${data.apellido1}`
       },
       error:()=>{

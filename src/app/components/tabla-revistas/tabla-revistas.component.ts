@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RevistaService } from './revista.service';
 import { AlquilerService } from '../../pages/alquileres/alquiler.service';
 import { Alquiler } from '../../models/alquiler';
+import { ToastrService,ToastrModule } from 'ngx-toastr';
 
 @Component({
   selector: 'app-tabla-revistas',
@@ -12,7 +13,7 @@ import { Alquiler } from '../../models/alquiler';
 export class TablaRevistasComponent {
 
   revistasDisponibles:any[]=[]
-  constructor(public revistaService:RevistaService,public alquilerService:AlquilerService){
+  constructor(public revistaService:RevistaService,public alquilerService:AlquilerService,private toastr:ToastrService){
     this.getRevistas()
   }
 
@@ -49,6 +50,8 @@ export class TablaRevistasComponent {
 
     this.alquilerService.alquilarProducto(newAlquiler).subscribe({
       next:(data)=>{
+        this.toastr.success('Alquiler realizado')
+        this.alquilerService.alquileresRevistas++
         console.log('hecho')
       },
       error:()=>{

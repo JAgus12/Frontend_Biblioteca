@@ -6,6 +6,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { AlquileresComponent } from './pages/alquileres/alquileres.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { authGuard } from './guards/auth.guard';
+import { CuentaComponent } from './pages/cuenta/cuenta/cuenta.component';
 
 export const routes: Routes = [
     {
@@ -40,5 +41,10 @@ export const routes: Routes = [
         path:'registro',
         component:RegistroComponent,
         title:'Registro'
+    },
+    {
+        path:'cuenta',
+        component:CuentaComponent,
+        title:'Cuenta'
     }
 ];
